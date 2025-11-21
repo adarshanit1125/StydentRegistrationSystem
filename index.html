@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Student Registration System</title>
+    <meta name="description" content="Register, edit, delete student records. Saves to localStorage." />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <header class="site-header">
+        <h1>Student Registration System</h1>
+        <p class="lead">Add, edit, delete student records — data persists using localStorage.</p>
+    </header>
+
+    <main class="container">
+        <section class="form-panel">
+            <form id="studentForm" novalidate>
+                <div class="form-row">
+                    <label for="name">Student Name</label>
+                    <input id="name" name="name" type="text" placeholder="Full name" required />
+                </div>
+
+                <div class="form-row">
+                    <label for="studentId">Student ID</label>
+                    <input id="studentId" name="studentId" type="text" placeholder="Numeric ID" required />
+                </div>
+
+                <div class="form-row">
+                    <label for="email">Email</label>
+                    <input id="email" name="email" type="email" placeholder="name@example.com" required />
+                </div>
+
+                <div class="form-row">
+                    <label for="contact">Contact Number</label>
+                    <input id="contact" name="contact" type="text" placeholder="10+ digits" required />
+                </div>
+
+                <div class="form-actions">
+                    <button id="submitBtn" type="submit">Add</button>
+                    <button id="resetBtn" type="button" class="muted">Reset</button>
+                </div>
+
+                <div id="formMsg" class="form-msg" aria-live="polite"></div>
+            </form>
+        </section>
+
+        <section class="display-panel">
+            <div class="display-header">
+                <h2>Registered Students</h2>
+                <div class="display-controls">
+                    <input id="search" type="search" placeholder="Search by name or ID" />
+                    <button id="clearAll" class="danger">Clear All</button>
+                </div>
+            </div>
+
+            <div id="tableWrap" class="table-wrap">
+                <table id="studentsTable" class="students-table" aria-label="Registered students">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>ID</th>
+                            <th>Email</th>
+                            <th>Contact</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="studentsTbody">
+                        <!-- rows populated by JS -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <small>Made for Assignment — follow README for Git commits & submission rules.</small>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

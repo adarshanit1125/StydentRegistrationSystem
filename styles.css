@@ -1,0 +1,242 @@
+:root {
+    --bg: #f7f8fb;
+    --accent: #3663ff;
+    --muted: #6b7280;
+    --danger: #e74c3c;
+    --card: #ffffff;
+    --radius: 12px;
+    --gap: 16px;
+}
+
+* {
+    box-sizing: border-box
+}
+
+html,
+body {
+    height: 100%
+}
+
+body {
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    margin: 0;
+    background: linear-gradient(120deg, #ffe6e6 0%, #e6fff2 50%, #e6f0ff 100%);
+    color: #111827;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    padding: 24px;
+}
+
+/* header */
+.site-header {
+    text-align: center;
+    margin-bottom: 18px;
+}
+
+.site-header h1 {
+    margin: 0;
+    font-size: 1.6rem;
+    letter-spacing: 0.6px
+}
+
+.lead {
+    color: var(--muted);
+    margin-top: 6px
+}
+
+/* layout */
+.container {
+    display: grid;
+    gap: var(--gap);
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* form panel */
+.form-panel {
+    background: var(--card);
+    padding: 20px;
+    border-radius: var(--radius);
+    box-shadow: 0 6px 18px rgba(14, 30, 37, 0.06);
+}
+
+.form-row {
+    margin-bottom: 12px
+}
+
+.form-row label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #0f172a
+}
+
+.form-row input {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    font-size: 0.95rem;
+}
+
+.form-actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-top: 8px
+}
+
+button {
+    padding: 9px 14px;
+    border-radius: 10px;
+    border: 0;
+    font-weight: 600;
+    cursor: pointer
+}
+
+button#submitBtn {
+    background: var(--accent);
+    color: #fff
+}
+
+button.muted {
+    background: #f3f4f6;
+    color: var(--muted)
+}
+
+button.danger {
+    background: var(--danger);
+    color: #fff
+}
+
+/* display panel */
+.display-panel {
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.7));
+    padding: 18px;
+    border-radius: var(--radius);
+    box-shadow: 0 6px 18px rgba(14, 30, 37, 0.05);
+}
+
+.display-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    gap: 12px
+}
+
+.display-controls {
+    display: flex;
+    gap: 8px;
+    align-items: center
+}
+
+#search {
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #d1d5db
+}
+
+/* table & scroll area */
+.table-wrap {
+    border-radius: 8px;
+    border: 1px solid #cbd5e1;
+    padding: 8px;
+    max-height: 360px;
+    /* dynamic can be adjusted by JS for smaller screens */
+    overflow: auto;
+    background: rgba(255, 255, 255, 0.6)
+}
+
+.students-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 700px
+}
+
+.students-table th,
+.students-table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #e6eef7;
+    text-align: left;
+}
+
+.students-table thead th {
+    background: rgba(0, 0, 0, 0.03);
+    position: sticky;
+    top: 0;
+    backdrop-filter: blur(2px)
+}
+
+.action-btn {
+    padding: 6px 8px;
+    border-radius: 8px;
+    border: 0;
+    font-weight: 600;
+    cursor: pointer;
+    margin-left: 6px
+}
+
+.edit {
+    background: #fbbf24;
+    color: #111
+}
+
+.delete {
+    background: #ef4444;
+    color: #fff
+}
+
+.empty {
+    color: var(--muted);
+    text-align: center;
+    padding: 18px
+}
+
+/* misc */
+.form-msg {
+    color: var(--danger);
+    margin-top: 8px
+}
+
+.site-footer {
+    max-width: 1100px;
+    margin: 20px auto 0;
+    color: var(--muted);
+    text-align: center
+}
+
+/* responsive */
+@media (max-width:1024px) {
+    .container {
+        grid-template-columns: 1fr
+    }
+
+    .students-table {
+        min-width: 600px
+    }
+
+    .table-wrap {
+        max-height: 300px
+    }
+}
+
+@media (max-width:640px) {
+    body {
+        padding: 12px
+    }
+
+    .table-wrap {
+        max-height: 260px
+    }
+
+    .students-table {
+        min-width: 520px
+    }
+
+    .site-header h1 {
+        font-size: 1.2rem
+    }
+}
